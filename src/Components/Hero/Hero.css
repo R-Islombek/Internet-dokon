@@ -1,0 +1,304 @@
+/* ====================================
+   HERO MAIN CONTAINER & BACKGROUND
+==================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background-image: url('../Hero/images/bg.png'); /* Fon rasmingiz */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Fon qorong'uligi va dinamik qatlam */
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.25) 50%, 
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+/* Yengil premium nur effekti (::after) */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+/* ====================================
+   SUBTITLE (SMART SOLUTION)
+==================================== */
+.hero__subtitle {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Chap va o'ng tarafdagi ingichka chiziqlar */
+.hero__subtitle::before,
+.hero__subtitle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+  transform: translateY(-50%);
+}
+
+.hero__subtitle::before {
+  left: -48px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.hero__subtitle::after {
+  right: -48px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+/* ====================================
+   TITLE & GREEN BANNER (PIXEL PERFECT)
+==================================== */
+.hero__title {
+  width: 100%;
+  max-width: 950px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Yuqori matn: "We Build Your Roof" */
+.hero__title-top {
+  display: block;
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  margin-bottom: 12px;
+}
+
+/* Rasmdagi to'liq enli yashil lenta (Banner) */
+.hero__title-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #005a2b 0%, #006633 100%);
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+/* Lenta ustiga tushadigan yengil nurlanish effekti */
+.hero__title-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.15), 
+    transparent
+  );
+  animation: shineBanner 6s infinite;
+}
+
+.hero__title-banner span {
+  color: #ffffff;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ====================================
+   GET QUOTE TUGMASI (STYLISH BUTTON)
+==================================== */
+.hero__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #006633 0%, #004d26 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  padding: 14px 42px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 102, 51, 0.45);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tugma ichidagi matn ustunligi */
+.hero__btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover qilinganda yaltirab o'tuvchi nur (Glow) */
+.hero__btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(25deg);
+  transition: all 0.65s ease;
+  z-index: 1;
+}
+
+.hero__btn:hover::after {
+  left: 125%;
+}
+
+.hero__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 102, 51, 0.65);
+  background: linear-gradient(135deg, #007339 0%, #005a2b 100%);
+}
+
+.hero__btn:active {
+  transform: translateY(-1px);
+}
+
+/* ====================================
+   ANIMATSIYALAR
+==================================== */
+@keyframes shineBanner {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* ====================================
+   RESPONSIVE (ADAPTIV DIZAYN)
+==================================== */
+
+@media (max-width: 992px) {
+  .hero {
+    min-height: 460px;
+  }
+
+  .hero__title-top {
+    font-size: 40px;
+  }
+
+  .hero__title-banner span {
+    font-size: 34px;
+  }
+
+  .hero__title-banner {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__subtitle {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .hero__subtitle::before,
+  .hero__subtitle::after {
+    width: 25px;
+  }
+
+  .hero__subtitle::before { left: -35px; }
+  .hero__subtitle::after { right: -35px; }
+
+  .hero__title-top {
+    font-size: 30px;
+  }
+
+  .hero__title-banner span {
+    font-size: 24px;
+  }
+
+  .hero__btn {
+    padding: 12px 32px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 360px;
+  }
+
+  .hero__title-top {
+    font-size: 22px;
+  }
+
+  .hero__title-banner span {
+    font-size: 18px;
+  }
+
+  .hero__subtitle::before,
+  .hero__subtitle::after {
+    display: none; /* Mobilda sig'ishi uchun yon chiziqlar o'chiriladi */
+  }
+
+  .hero__btn {
+    padding: 10px 26px;
+    font-size: 12px;
+    width: 90%; /* Mobilda tugma kengroq ko'rinadi */
+  }
+}
