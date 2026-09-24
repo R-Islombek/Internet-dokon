@@ -1,11 +1,9 @@
-/* ====================================
-   HERO MAIN CONTAINER & BACKGROUND
-==================================== */
+
 .hero {
   position: relative;
   width: 100%;
   min-height: 520px;
-  background-image: url('../Hero/images/bg.png'); /* Fon rasmingiz */
+  background-image: url('../Hero/images/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,7 +14,6 @@
   overflow: hidden;
 }
 
-/* Fon qorong'uligi va dinamik qatlam */
 .hero__overlay {
   position: absolute;
   top: 0;
@@ -32,7 +29,6 @@
   z-index: 1;
 }
 
-/* Yengil premium nur effekti (::after) */
 .hero::after {
   content: '';
   position: absolute;
@@ -59,9 +55,6 @@
   padding: 60px 0;
 }
 
-/* ====================================
-   SUBTITLE (SMART SOLUTION)
-==================================== */
 .hero__subtitle {
   color: #ffffff;
   font-size: 14px;
@@ -74,7 +67,6 @@
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Chap va o'ng tarafdagi ingichka chiziqlar */
 .hero__subtitle::before,
 .hero__subtitle::after {
   content: '';
@@ -96,9 +88,6 @@
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
 }
 
-/* ====================================
-   TITLE & GREEN BANNER (PIXEL PERFECT)
-==================================== */
 .hero__title {
   width: 100%;
   max-width: 950px;
@@ -108,7 +97,6 @@
   align-items: center;
 }
 
-/* Yuqori matn: "We Build Your Roof" */
 .hero__title-top {
   display: block;
   color: #ffffff;
@@ -120,7 +108,6 @@
   margin-bottom: 12px;
 }
 
-/* Rasmdagi to'liq enli yashil lenta (Banner) */
 .hero__title-banner {
   width: 100%;
   background: linear-gradient(135deg, #005a2b 0%, #006633 100%);
@@ -132,7 +119,6 @@
   backdrop-filter: blur(4px);
 }
 
-/* Lenta ustiga tushadigan yengil nurlanish effekti */
 .hero__title-banner::before {
   content: '';
   position: absolute;
@@ -157,9 +143,6 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ====================================
-   GET QUOTE TUGMASI (STYLISH BUTTON)
-==================================== */
 .hero__btn {
   position: relative;
   display: inline-flex;
@@ -180,13 +163,11 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Tugma ichidagi matn ustunligi */
 .hero__btn span {
   position: relative;
   z-index: 2;
 }
 
-/* Hover qilinganda yaltirab o'tuvchi nur (Glow) */
 .hero__btn::after {
   content: '';
   position: absolute;
@@ -214,18 +195,12 @@
   transform: translateY(-1px);
 }
 
-/* ====================================
-   ANIMATSIYALAR
-==================================== */
 @keyframes shineBanner {
   0% { left: -100%; }
   20% { left: 100%; }
   100% { left: 100%; }
 }
 
-/* ====================================
-   RESPONSIVE (ADAPTIV DIZAYN)
-==================================== */
 
 @media (max-width: 992px) {
   .hero {
@@ -293,12 +268,12 @@
 
   .hero__subtitle::before,
   .hero__subtitle::after {
-    display: none; /* Mobilda sig'ishi uchun yon chiziqlar o'chiriladi */
+    display: none; 
   }
 
   .hero__btn {
     padding: 10px 26px;
     font-size: 12px;
-    width: 90%; /* Mobilda tugma kengroq ko'rinadi */
+    width: 90%; 
   }
 }
