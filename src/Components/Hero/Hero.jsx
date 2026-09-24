@@ -21,7 +21,6 @@ const Hero = () => {
             </div>
           </h1>
 
-          {/* Harakatga chaqiruvchi Tugma */}
           <a href="#" className="hero__btn">
             <span>GET QUOTE</span>
           </a>
